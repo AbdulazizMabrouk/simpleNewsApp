@@ -4,13 +4,14 @@ import {getAllNews} from '../../../services/getAllNews';
 import {News} from '../../molecules';
 import {useNavigation} from '@react-navigation/core';
 import {SearchBar} from 'react-native-elements';
+import {newsDataTypes} from '../../../utils';
 
 interface NewsListProps {
   id?: string;
 }
 
 const NewsList = ({id}: NewsListProps) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Array<newsDataTypes>>([]);
   const [filterd, setFilterd] = useState([]);
   const [refreshing, setRefreshing] = useState<boolean>();
 
@@ -52,7 +53,7 @@ const NewsList = ({id}: NewsListProps) => {
   const updateSearch = (text: string) => {
     setSearchValue(text);
 
-    let matched = data.filter((item: any) => {
+    let matched: Array<newsDataTypes> = data.filter((item: any) => {
       return item.title.toLowerCase().includes(searchValue.toLowerCase());
     });
     setFilterd(matched);
