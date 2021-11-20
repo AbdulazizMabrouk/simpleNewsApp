@@ -1,8 +1,11 @@
 import * as React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import NewsDetail from '../../components/organisms/NewsDetail';
 
-interface NewsDetailsProps {}
+interface NewsDetailsProps {
+  route?: any;
+  navigation?: any;
+}
 
 const NewsDetails = ({route, navigation}: NewsDetailsProps) => {
   return <NewsDetail route={route} navigation={navigation} />;

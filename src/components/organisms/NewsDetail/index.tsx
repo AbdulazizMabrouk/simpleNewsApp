@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {
-  Text,
   View,
   StyleSheet,
   useColorScheme,
@@ -17,17 +16,10 @@ interface NewsDetailProps {
 const NewsDetail = ({route}: NewsDetailProps) => {
   let {item} = route.params.item;
   console.log(item);
-  const isDarkMode = useColorScheme() === 'dark';
 
   return (
     <ScrollView>
-      <View
-        style={[
-          styles.container,
-          {
-            // backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          },
-        ]}>
+      <View style={[styles.container]}>
         <AppText style={styles.title}>{item.title}</AppText>
         <AppText style={styles.author}>{item.author}</AppText>
         <AppText style={styles.publishedAt}>{item.publishedAt}</AppText>

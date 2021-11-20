@@ -1,6 +1,6 @@
 import * as React from 'react';
 import I18n from 'i18n-js';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {CheckBox} from 'react-native-elements';
 import {Button} from '../../Atoms';
 import {COLORS} from '../../../common';

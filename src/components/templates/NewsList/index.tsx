@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, FlatList, RefreshControl} from 'react-native';
+import {View, StyleSheet, FlatList, RefreshControl} from 'react-native';
 import {getAllNews} from '../../../services/getAllNews';
 import {News} from '../../molecules';
 import {useNavigation} from '@react-navigation/core';
@@ -21,7 +21,6 @@ const NewsList = ({id}: NewsListProps) => {
     getData();
   }, []);
   React.useEffect(() => {
-    console.log('itemitemitemitem', data);
     setLoaded(true);
   }, [data]);
   const getData = async () => {

@@ -23,11 +23,11 @@ export function MyTabs() {
             iconName = focused ? 'ios-list' : 'ios-list';
           }
 
-          // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
+        headerShown: false,
       })}>
       <Tab.Screen
         name={I18n.t('news')}

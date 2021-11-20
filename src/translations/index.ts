@@ -1,5 +1,4 @@
 import I18n from 'i18n-js';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNRestart from 'react-native-restart';
 import {I18nManager} from 'react-native';
 import {getLang, setLang} from '../utils/languages';
