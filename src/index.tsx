@@ -8,7 +8,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -30,6 +30,8 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {Home} from './screens';
 import {HomeNav} from './navigation/Home';
+import {MyTabs} from './navigation/AppTabs';
+import {localize} from './translations';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -37,6 +39,13 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.lighter : Colors.lighter,
   };
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    localize().then(res => {
+      setIsLoaded(true);
+    });
+  }, []);
 
   return (
     <NavigationContainer>
@@ -50,7 +59,8 @@ const App = () => {
           height: '100%',
           width: '100%',
         }}> */}
-      <HomeNav />
+      {isLoaded && <MyTabs />}
+
       {/* </View> */}
 
       {/* <Text></Text> */}

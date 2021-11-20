@@ -7,7 +7,6 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {AppText} from '../../Atoms';
 import {FONTS, COLORS} from '../../../common';
 
